@@ -8,50 +8,26 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- -----------------------------------------------1 - Алерт по нажатию на кнопку----------------------->
+    <div class="wrapper">
+      <h2>Event</h2>
+      <button data-num="1" class="btn">Click <strong>1</strong></button>
+      <button data-num="2" class="btn">Click <strong>2</strong></button>
+      <button data-num="3" class="btn">Click <strong>3</strong></button>
+      <button data-num="4" class="btn">Click <strong>4</strong></button>
+    </div>
 
-    <!-- <button onclick="alert('Доброго вечора ми з України!')">
-      Нажми на меня(1)
-    </button> -->
-    <!--------------------------------------------------2 - Изменение текста в инпуте------------------------>
+    <!-- <script src="/js/dom.js"></script> -->
+    <script>
+      const buttons = document.querySelectorAll(".btn");
 
-    <!-- <button onclick="buttonClick()">Нажми на меня(2)</button>
-    <input type="text" id="input" value="???" /> -->
-    <!-- -----------------------------------------------3 - Вывод содержимого инпута------------------------->
+      const handleClick = (event) => {
+        console.log("target >", event.target);
+        console.log("target >", event.currentTarget);
+      };
 
-    <!-- <button onclick="buttonClick()">Нажми на меня(3)</button>
-    <input type="text" id="input" value="???" /> -->
-    <!-- ---------------------------------------------- 4 - Квадрат содержимого инпута----------------------->
-
-    <!-- <button onclick="buttonClick()">Нажми на меня</button>
-    <input type="text" id="input" placeholder="Введите число!" /> -->
-    <!-- ---------------------------------------------- 5 - Обмен содержимым между инпутами------------------>
-
-    <!-- <button onclick="buttonClick()">Нажми на меня</button>
-    <input type="text" id="input1" value="!!!" /><input
-      type="text"
-      id="input2"
-      value="???"
-    /> -->
-    <!-- ---------------------------------------------- 6 - По нажатию на кнопку меняется ее текст----------->
-
-    <!-- <input type="button" onclick="buttonClick(this)" value="Нажми на меня" /> -->
-    <!-- ---------------------------------------------- 7 - Работа с CSS ------------------------------------>
-
-    <!-- <button onclick="buttonClick()">Нажми на меня</button>
-    <input type="text" id="input" value="Какой-то текст!" /> -->
-
-    <!-------------------------------------------------8 - Блокирование полей ввода------------------------->
-
-    <!-- <button onclick="button1Click()">Заблокировать</button>
-    <button onclick="button2Click()">Разблоктровать</button>
-    <input type="text" id="input" value="Какой-то текст!" /> -->
-
-    <!-- -------------------------------------------------Решение задач -->
-    <!-- -----------------------------------------------------Tasc #1 ----------------------------------------->
-    <button onclick="alert('привет')">Нажми на меня</button>
-    <button mousemove="alert('привет')">Навиди на меня</button>
-
-    <script src="/js/repeatDom.js"></script>
+      buttons.forEach((button) => {
+        button.addEventListener("click", handleClick);
+      });
+    </script>
   </body>
 </html>
